@@ -14,7 +14,7 @@ import {
 const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet title="Home | Gatsby + Bulma & Bloomer" />
-    <Hero isHalfHeight isColor="black">
+    <Hero isFullHeight isColor="primary">
       
 
       <HeroBody>{children()}</HeroBody>

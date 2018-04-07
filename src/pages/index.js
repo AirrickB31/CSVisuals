@@ -1,9 +1,10 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import { Container, Title, Columns, Column } from 'bloomer'
+import { Container, Title, Columns, Column, Button } from 'bloomer'
 import InputForm from '../components/InputForm'
 import SalaryTable from '../components/SalaryTable'
 import firebase from 'firebase'
+import people from '../utils/populateDB.js'
 
 const config = {
   apiKey: 'AIzaSyCQG1sEbCVYYmCxBlhbY0ACZsP25BHh0u0',
@@ -21,9 +22,25 @@ class IndexPage extends React.Component {
     super()
     this.state = {
       tableData: [],
+      test: 'hi'
 
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handle50people = this.handle50people.bind(this);
+  }
+
+  handle50people(e){
+    e.preventDefault();
+    people.forEach(x => {
+      db.ref().push({
+        name: x.name,
+        role: x.role,
+        startDate: x.startDate,
+        monthlySalary: x.salary,
+        monthsTotal: 5,
+        totalBilled: 5
+      });
+    })
   }
 
   handleSubmit(e){
@@ -49,13 +66,14 @@ class IndexPage extends React.Component {
         <Columns>
           <Column isSize="1/2">
             <Title isSize="3">Stored Salaries</Title>
-            <SalaryTable props={this.state.data} />
+            <SalaryTable data={this.state.tableData} test={this.state.test} />
           </Column>
           <Column isSize="1/2">
             <Title isSize="3">Input Form</Title>
             <InputForm onSubmit={this.handleSubmit}/>
           </Column>
         </Columns>
+        <Button onClick={this.handle50people}>populate 50 people</Button>
       </Container>
     )
   }
