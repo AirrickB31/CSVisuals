@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "browser-sync": "^2.23.6",
+    "d3": "^5.0.0",
     "firebase": "^4.12.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
