@@ -89,5 +89,3 @@ export {
     SignUpForm,
     SignUpLink,
 };
-
-export default SignUpPage;
