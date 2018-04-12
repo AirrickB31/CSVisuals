@@ -13,12 +13,9 @@ import HomePage from './Home';
 import AccountPage from './Account';
 
 import * as routes from '../constants/routes';
+import withAuthentication from './withAuthentication';
 
-class App extends React.Component {
-
-  render(){
-    return (
-
+const App = () =>
     <Router>
       <div>
         <Navigation />
@@ -51,8 +48,5 @@ class App extends React.Component {
         />
       </div>
     </Router>
-    )
-  }
-}
 
-export default App;
+export default withAuthentication(App);
