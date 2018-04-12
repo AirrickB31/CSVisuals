@@ -19,11 +19,12 @@ const withAuthentication = Component =>
           ? this.setState(() => ({ authUser }))
           : this.setState(() => ({ authUser: null }));
       });
+      
     }
 
     render() {
       const { authUser } = this.state;
-      
+
       return (
         <AuthUserContext.Provider value={authUser}>
           <Component />

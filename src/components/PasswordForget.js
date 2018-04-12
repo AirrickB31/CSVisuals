@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { LInk } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { auth } from '../firebase';
 
@@ -10,7 +10,7 @@ const PasswordForgetPage = () =>
   </div>
 
 const byPropKey = (propName, val) => () => ({
-  [pName]: val,
+  [propName]: val,
 });
 
 const INITIAL_STATE = {
