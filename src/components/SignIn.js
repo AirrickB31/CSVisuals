@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom';
 
 import {SignUpLink} from './SignUp';
 import {PasswordForgetLink} from './PasswordForget';
-import {auth, firebase} from '../firebase';
+import {auth} from '../firebase';
 import * as routes from '../constants/routes';
 
 const SignInPage = ({history}) => <div>
@@ -51,7 +51,7 @@ class SignInForm extends Component {
   }
 
   render() {
-    const {email, password, user, error} = this.state;
+    const {email, password, error} = this.state;
 
     const isInvalid = password === '' || email === '';
 
