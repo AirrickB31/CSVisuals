@@ -4,22 +4,16 @@ import React, { Component } from 'react';
 import {
   Button,
   Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
   Menu,
   Responsive,
   Segment,
+  Icon,
   Sidebar,
   Visibility,
 } from 'semantic-ui-react';
 
 import * as routes from '../constants/routes';
 import LoginModal from './LoginModal';
-import ModalLogin from './LoginModal';
 
 class DesktopContainer extends Component {
   state = {}
