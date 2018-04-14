@@ -1,14 +1,14 @@
 import React from 'react';
 
 import { auth } from '../firebase';
-
+import { ButtonCircle } from 'rebass'
 
 const SignOutButton = () =>
-  <button
+  <ButtonCircle
     type="button"
     onClick={auth.doSignOut}  
   >
-    SignOut Page
-  </button>
+    Sign Out
+  </ButtonCircle>
 
 export default SignOutButton;
