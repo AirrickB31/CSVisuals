@@ -18,6 +18,8 @@ import {
 } from 'semantic-ui-react';
 
 import * as routes from '../constants/routes';
+import LoginModal from './LoginModal';
+import ModalLogin from './LoginModal';
 
 class DesktopContainer extends Component {
   state = {}
@@ -32,7 +34,7 @@ class DesktopContainer extends Component {
     return (
       <Responsive {...Responsive.onlyComputer}>
         <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>
-          <Segment inverted textAlign='center' style={{ minHeight: 85, padding: '1em 0em' }} vertical>
+          <Segment inverted textAlign='center'>
             <Menu
               fixed={fixed ? 'top' : null}
               inverted={!fixed}
@@ -43,7 +45,7 @@ class DesktopContainer extends Component {
               <Container>
                 <Menu.Item as='a' active><Link to={routes.LANDING}>Landing</Link></Menu.Item>
                 <Menu.Item position='right'>
-                  <Button as='a' inverted={!fixed}><Link to={routes.SIGN_IN}>Sign In</Link></Button>
+                  <LoginModal />
                   <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>Sign Up</Button>
                 </Menu.Item>
               </Container>
@@ -92,7 +94,7 @@ class MobileContainer extends Component {
                     <Icon name='sidebar' />
                   </Menu.Item>
                   <Menu.Item position='right'>
-                    <Button as='a' inverted><Link to={routes.SIGN_IN}>Sign In</Link></Button>
+                    <LoginModal />
                     <Button as='a' inverted style={{ marginLeft: '0.5em' }}>Sign Up</Button>
                   </Menu.Item>
                 </Menu>
