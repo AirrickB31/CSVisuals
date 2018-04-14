@@ -18,6 +18,7 @@ import ProgressArc from './ProgressArc';
 
 
 const LandingPage = ({ mobile }) => (
+  <Segment inverted textAlign='center' style={{ minHeight: 700, padding: '1em 0em' }} vertical>
   <Container text>
     <Header
       as='h1'
@@ -45,6 +46,7 @@ const LandingPage = ({ mobile }) => (
       <Icon name='right arrow' />
     </Button>
   </Container>
+  </Segment>
 );
 export default LandingPage;
 
