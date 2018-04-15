@@ -6,6 +6,7 @@ import {
   Icon,
   Segment
 } from 'semantic-ui-react';
+import FileUpload from './FileUpload';
 
 
 const LandingPage = ({ mobile }) => (
@@ -22,6 +23,7 @@ const LandingPage = ({ mobile }) => (
         marginTop: mobile ? '1.5em' : '3em',
       }}
     />
+    <FileUpload />
     <Header
       as='h2'
       content='Visualize Your Data.'

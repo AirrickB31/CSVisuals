@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
+import { Button, Form, Input, Divider } from 'semantic-ui-react';
 
 import {SignUpLink} from './SignUp';
 import {PasswordForgetLink} from './PasswordForget';
@@ -31,10 +32,10 @@ class SignInForm extends Component {
   }
 
   onSubmit = (event) => {
+    console.log('hi');
     const {email, password} = this.state;
 
     const {history} = this.props;
-
     auth
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
@@ -56,22 +57,27 @@ class SignInForm extends Component {
     const isInvalid = password === '' || email === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
+      <Form onSubmit={this.onSubmit}>
+        <Form.Field>
+        <Input
           type="text"
           value={email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}
           placeholder='Email Address'/>
-        <input
+        </Form.Field>
+        <Form.Field>
+        <Input
           type="password"
           value={password}
           onChange={event => this.setState(byPropKey('password', event.target.value))}
           placeholder='Password'/>
-        <button disabled={isInvalid} type="submit">
+        </Form.Field>
+        <Divider />
+        <Button disabled={isInvalid} type="submit">
           Sign In
-        </button>
+        </Button>
         {error && <p>{error.massage}</p>}
-      </form>
+      </Form>
     );
   }
 }
