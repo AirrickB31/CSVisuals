@@ -50,6 +50,9 @@ class SignInForm extends Component {
 
     event.preventDefault();
   }
+  componentWillUnmount(){
+    this.setState({...INITIAL_STATE});
+  }
 
   render() {
     const {email, password, error} = this.state;

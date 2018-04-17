@@ -23,7 +23,6 @@ const LandingPage = ({ mobile }) => (
         marginTop: mobile ? '1.5em' : '3em',
       }}
     />
-    <FileUpload />
     <Header
       as='h2'
       content='Visualize Your Data.'
@@ -41,5 +40,6 @@ const LandingPage = ({ mobile }) => (
   </Container>
   </Segment>
 );
+
 export default LandingPage;
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import FileUpload from './FileUpload';
 
 import withAuthorization from './withAuthorization';
 
@@ -6,7 +7,7 @@ const HomePage = () =>
     <div>
       <h1>Home Page</h1>
       <hr/>
-      <p>The Home Page is accessible by every signed in user.</p>
+      <FileUpload />
     </div>
 
 const authCondition = (authUser) => !!authUser;
