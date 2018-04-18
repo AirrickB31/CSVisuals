@@ -9,7 +9,7 @@ const HomePage = () =>
       <h1>Home Page</h1>
       <hr/>
       <FileUpload />
-      
+      <ShowUploads />
     </div>
 
 const authCondition = (authUser) => !!authUser;

@@ -10,26 +10,16 @@ class ShowUploads extends Component {
     user: null,
   }
 
-  onFormSubmit = (authUser, e) => {
-    e.preventDefault()
-    this.fileUpload(authUser, this.state.file)
-  }
-  onChange = event => this.setState({ file: event.target.files[0] })
-
-  fileUpload(authUser, file) {
-    storage.uploadFile(authUser.uid, file)
+  getFile(authUser) {
+    storage.retrieveFile(authUser.uid);
   }
 
   render() {
     return (
       <AuthUserContext.Consumer>
-        <div>
-        {authUser => (
-          <Label>
-          {storage.retrieveFile(authUser.uid)}
-          </Label>
-        )}
-        </div>
+      {authUser => (
+        this.getFile(authUser)
+      )}
       </AuthUserContext.Consumer>
     )
   }
