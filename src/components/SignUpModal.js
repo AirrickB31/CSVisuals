@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import SignInForm from './SignIn';
+import SignUpForm from './SignUp';
 import {
   Button,
   Modal
@@ -17,11 +17,11 @@ class ModalLogin extends Component {
   
       return (
         <div>
-          <Button onClick={this.show}>Log In</Button>
+          <Button as='a' inverted onClick={this.show} primary style={{ marginLeft: '0.5em' }}>Sign Up</Button>
   
           <Modal open={open} onClose={this.close}  style={{ maxWidth: '250px'}}>
             <Modal.Content>
-              <SignInForm />
+              <SignUpForm />
             </Modal.Content>
           </Modal>
         </div>
@@ -30,4 +30,3 @@ class ModalLogin extends Component {
   }
 
 export default ModalLogin
-

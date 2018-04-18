@@ -2,19 +2,11 @@ import React from "react";
 import {
   Button,
   Container,
-  Divider,
-  Grid,
   Header,
   Icon,
-  Image,
-  List,
-  Menu,
-  Responsive,
-  Segment,
-  Sidebar,
-  Visibility,
-} from 'semantic-ui-react'
-import ProgressArc from './ProgressArc';
+  Segment
+} from 'semantic-ui-react';
+import FileUpload from './FileUpload';
 
 
 const LandingPage = ({ mobile }) => (
@@ -48,5 +40,6 @@ const LandingPage = ({ mobile }) => (
   </Container>
   </Segment>
 );
+
 export default LandingPage;
 

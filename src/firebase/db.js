@@ -10,3 +10,6 @@ export const doCreateUser = (id, username, email) =>
 
 export const onceGetUsers = () =>
   db.ref('users').once('value');
+
+export const uploadFile = (id, file) =>
+  db.ref(`users/${id}/files`).push('hello');

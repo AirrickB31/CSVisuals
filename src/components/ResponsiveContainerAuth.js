@@ -4,12 +4,7 @@ import React, { Component } from 'react';
 import {
   Button,
   Container,
-  Divider,
-  Grid,
-  Header,
   Icon,
-  Image,
-  List,
   Menu,
   Responsive,
   Segment,
@@ -42,9 +37,9 @@ class DesktopContainer extends Component {
               size='large'
             >
               <Container>
-                <Menu.Item as='a'><Link to={routes.LANDING}>Landing</Link></Menu.Item>
-                <Menu.Item as='a'><Link to={routes.HOME}>Home</Link></Menu.Item>
-                <Menu.Item as='a'><Link to={routes.ACCOUNT}>Account</Link></Menu.Item>
+                <Menu.Item><Link to={routes.LANDING}>Landing</Link></Menu.Item>
+                <Menu.Item><Link to={routes.HOME}>Home</Link></Menu.Item>
+                <Menu.Item><Link to={routes.ACCOUNT}>Account</Link></Menu.Item>
                 <Menu.Item position='right'>
                   <SignOutButton />
                 </Menu.Item>

@@ -4,22 +4,17 @@ import React, { Component } from 'react';
 import {
   Button,
   Container,
-  Divider,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
   Menu,
   Responsive,
   Segment,
+  Icon,
   Sidebar,
   Visibility,
 } from 'semantic-ui-react';
 
 import * as routes from '../constants/routes';
 import LoginModal from './LoginModal';
-import ModalLogin from './LoginModal';
+import SignUpModal from './SignUpModal';
 
 class DesktopContainer extends Component {
   state = {}
@@ -43,10 +38,10 @@ class DesktopContainer extends Component {
               size='large'
             >
               <Container>
-                <Menu.Item as='a' active><Link to={routes.LANDING}>Landing</Link></Menu.Item>
+                <Menu.Item active><Link to={routes.LANDING}>Landing</Link></Menu.Item>
                 <Menu.Item position='right'>
                   <LoginModal />
-                  <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>Sign Up</Button>
+                  <SignUpModal />
                 </Menu.Item>
               </Container>
             </Menu>

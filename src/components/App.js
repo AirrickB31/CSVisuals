@@ -4,11 +4,9 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Navigation from './Navigation';
 import LandingPage from './Landing';
 import SignUpPage from './SignUp';
-import SignInPage from './SignIn';
 import PasswordForgetPage from './PasswordForget';
 import HomePage from './Home';
 import AccountPage from './Account';
-import {Divider, Segment} from 'semantic-ui-react';
 
 import * as routes from '../constants/routes';
 import withAuthentication from './withAuthentication';
