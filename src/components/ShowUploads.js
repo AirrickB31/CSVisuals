@@ -4,7 +4,7 @@ import { Button, Form, Input, Label } from 'semantic-ui-react'
 import withAuthorization from './withAuthorization'
 import AuthUserContext from './AuthUserContext'
 
-class FileUpload extends Component {
+class ShowUploads extends Component {
   state = {
     file: null,
     user: null,
@@ -23,15 +23,13 @@ class FileUpload extends Component {
   render() {
     return (
       <AuthUserContext.Consumer>
+        <div>
         {authUser => (
-          <Form onSubmit={(e) => this.onFormSubmit(authUser, e)}>
-            <Form.Field>
-              <Label>Upload your file</Label>
-              <Input type="file" onChange={this.onChange} />
-              <Button type="submit">Upload</Button>
-            </Form.Field>
-          </Form>
+          <Label>
+          {storage.retrieveFile(authUser.uid)}
+          </Label>
         )}
+        </div>
       </AuthUserContext.Consumer>
     )
   }
@@ -39,4 +37,4 @@ class FileUpload extends Component {
 
 const authCondition = authUser => !!authUser
 
-export default withAuthorization(authCondition)(FileUpload)
+export default withAuthorization(authCondition)(ShowUploads);

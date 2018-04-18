@@ -1,5 +1,6 @@
 import React from 'react';
 import FileUpload from './FileUpload';
+import ShowUploads from './ShowUploads';
 
 import withAuthorization from './withAuthorization';
 
@@ -8,6 +9,7 @@ const HomePage = () =>
       <h1>Home Page</h1>
       <hr/>
       <FileUpload />
+      
     </div>
 
 const authCondition = (authUser) => !!authUser;
