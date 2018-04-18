@@ -6,7 +6,6 @@ import {
   Icon,
   Segment
 } from 'semantic-ui-react';
-import FileUpload from './FileUpload';
 
 
 const LandingPage = ({ mobile }) => (
